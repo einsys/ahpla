@@ -7,7 +7,9 @@ When there is an alpha-composited image C made from a translucent image A (0 <= 
 Crgb = Argb * Aa + Brgb * (1 - Aa)
 
 If you have an opaque image B that has not yet been synthesized here and you want to get A using these, there are three expressions, but the number of unknowns is four, so you get infinite number of values.
+
 If the pixel format is 32bppARGB, then a,r,g,b are integers with values ​​from 0 to 255, so the range of possible solutions is not very wide. Therefore, assuming that "a" is a certain value, and calculating rgb, you can get several solutions including the value that was originally in A (correct answer). Since there is no r, g, or b for all "a", the number of solution is larger than 0 and less than 256 (there always is an answer if "a" is 1; and we don't have to think about the case where "a" is 0).
+
 This program outputs A when B and C are given. In this case, there are 4 options for the assumption of "a":
 
 L: Finds a pixel value with minimum "a" by incrementing "a" from 1.
@@ -40,7 +42,9 @@ How to use:
 Crgb = Argb * Aa + Brgb * (1 - Aa)
 
 여기서 아직 합성되지 않은 불투명 이미지 B를 가지고 있고, 이들을 이용해서 A를 구하고 싶다면, 식은 3개인데 미지수는 4개이므로 해가 무수히 많아집니다.
+
 만약 픽셀 포맷이 32bppARGB라면, 여기서의 a,r,g,b는 0~255의 값을 갖는 정수이므로 얻을 수 있는 해의 범위가 별로 넓지 않습니다. 따라서 a를 어떤 값이라고 가정하고 r,g,b를 계산하면 원래 A에 들어있던 값(정답)을 포함한 여러 개의 해를 얻을 수 있습니다. 모든 a에 대해 r,g,b가 있지는 않으므로 해는 1개 이상 ~ 255개 이하가 됩니다(a가 1이면 무조건 답이 있고, a가 0인 경우는 무시).
+
 이 프로그램은 B와 C가 주어졌을 때 위의 방법으로 각 픽셀을 계산하여 A를 출력합니다. 이때 가정되는 a는 4가지 중에서 선택할 수 있습니다.
 
 L: a를 1부터 증가시켜 최소한의 a를 갖는 픽셀값을 찾습니다.
