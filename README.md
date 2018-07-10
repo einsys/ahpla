@@ -11,8 +11,11 @@ If the pixel format is 32bppARGB, then a,r,g,b are integers with values ​​fr
 This program outputs A when B and C are given. In this case, there are 4 options for the assumption of "a":
 
 L: Finds a pixel value with minimum "a" by incrementing "a" from 1.
+
 M: From 85. If there is no answer up to 170, it searches from 1. If there is no answer from 1 to 170, it searches from 171.
+
 H: From 171. If there is no answer up to 255, this option is equal to M.
+
 N: Assume "a" is 255. Therefore, rgb values are equal to the value of C.
 
 If a pixel value ​​of A and C are the same, then the output pixel becomes transparent. If at least one of r, g, or b of two pixels is different, the value is only calculated if this difference is greater than another option TH(the text box above the radio buttons), otherwise the pixel becomes transparent. Therefore, if TH is 0, every different pixels are calculated.
@@ -41,8 +44,11 @@ Crgb = Argb * Aa + Brgb * (1 - Aa)
 이 프로그램은 B와 C가 주어졌을 때 위의 방법으로 각 픽셀을 계산하여 A를 출력합니다. 이때 가정되는 a는 4가지 중에서 선택할 수 있습니다.
 
 L: a를 1부터 증가시켜 최소한의 a를 갖는 픽셀값을 찾습니다.
+
 M: a를 85부터 증가시킵니다. 170까지 답이 없으면 1부터 찾습니다. 1~170에 답이 없으면 171부터 찾습니다.
+
 H: a를 171부터 증가시킵니다. 255까지 답이 없으면 M과 같습니다.
+
 N: a를 255라고 가정합니다. 따라서 r,g,b는 C의 값과 같습니다.
 
 만약 A와 C의 픽셀값이 똑같은 픽셀은 투명 처리됩니다. 두 픽셀의 r,g,b 중 하나 이상이 다르다면, 이 차이가 또 다른 옵션인 TH(radio button 위에 있는 텍스트 박스)보다 클 경우에만 계산해서 값을 출력하고, 아니면 해당 픽셀은 투명 처리합니다. 따라서 TH가 0이라면 r,g,b중 1만 차이가 나도 계산을 하게 됩니다.
